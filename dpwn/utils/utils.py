@@ -42,7 +42,7 @@ def maybe_download(config, filename, extract=False):
             filepath, _progress)
         print()
         with tf.gfile.GFile(filepath) as f:
-            size = f.Size()
+            size = f.size()
         print('Successfully downloaded', filename, size, 'bytes.')
     if extract:
         tarfile.open(filepath, 'r:gz').extractall(work_directory)
